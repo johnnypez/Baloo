@@ -5,7 +5,7 @@ module Baloo
     def parse
       if /^true|false$/.match(body)
         bool
-      elsif /^\{.+\}$/.match(body)
+      elsif /^\{|\[.+\}|\]$/.match(body)
         json
       else
         body

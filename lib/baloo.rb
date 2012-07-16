@@ -6,6 +6,7 @@ require "baloo/parser"
 require "baloo/client"
 require "baloo/version"
 require "baloo/convenience"
+require "baloo/batch_request"
 
 module Baloo
 

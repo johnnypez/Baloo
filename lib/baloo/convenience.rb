@@ -2,7 +2,6 @@ module Baloo
   module Convenience
 
     # get an app access token
-    
     def client_credentials(id = Baloo.app_id, secret = Baloo.app_secret)
       @stored_client_credentials ||= {}
       unless @stored_client_credentials[id]
@@ -11,7 +10,6 @@ module Baloo
         :client_secret => secret,
         :grant_type => 'client_credentials'
         }
-        puts "Transport..."
         @stored_client_credentials[id] = get('oauth/access_token', :query => params).split("=")[1]
       end
 

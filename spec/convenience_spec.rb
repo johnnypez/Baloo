@@ -3,8 +3,8 @@ require 'spec_helper'
 describe Baloo::Convenience do
   
   it "should support retrieval of app access tokens" do
-    Baloo.configure :app_id => "292746490801773", :app_secret => "3844c2d35efed1b60012ccdf4d3ccf6f", :app_namespace => "devtastic"
-    Baloo.client_credentials.should match /^292746490801773\|.+/
+    Baloo.configure :app_id => "204876786306406", :app_secret => "34dc50cea8b8bbdf1dba1018c9aebc90", :app_namespace => "baloo_test"
+    Baloo.client_credentials.should match(/^204876786306406\|.+/)
   end
 
 end
