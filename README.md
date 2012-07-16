@@ -1,6 +1,6 @@
 # Baloo
 
-TODO: Write a gem description
+The simple 'bear' necessities for working with graph.facebook.com
 
 ## Installation
 
@@ -18,7 +18,30 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+ # configure
+ # only required if you're going to do stuff with your app access token later
+ Baloo.configure :app_id => '...', :app_secret => '...', app_namespace => '...'
+
+ #get /me
+ Baloo.get 'me', :query => {:access_token => '...'}
+ => {...} # a facebook user hash
+
+ # post 
+ Baloo.post 'me/albums', :body => {:access_token => '...', :name => 'Baloo Album'}
+ => {"id": "..."}
+
+ # app access token / client credentials
+ # Baloo#app_token is an alias for Baloo#client_credentials
+ Baloo.app_token
+ => "your_app_token"
+
+ Baloo.client_credentials
+ => "same_thing"
+
+ Baloo.app_token(app_id, app_secret)
+ => "app token for some other app"
+```
 
 ## Contributing
 

@@ -4,7 +4,7 @@ require File.expand_path('../lib/baloo/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["John Butler"]
   gem.email         = ["johnnypez@gmail.com"]
-  gem.description   = %q{The simple bare necessities for dealing with the Facebook Graph}
+  gem.description   = %q{The simple 'bear' necessities for working with graph.facebook.com}
   gem.summary       = %q{A simple Facebook Graph client}
   gem.homepage      = ""
 
