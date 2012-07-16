@@ -19,28 +19,34 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
- # configure
- # only required if you're going to do stuff with your app access token later
- Baloo.configure :app_id => '...', :app_secret => '...', app_namespace => '...'
+  # configure
+  # only required if you're going to do stuff with your app access token later
+  Baloo.configure :app_id => '...', :app_secret => '...', app_namespace => '...'
 
- #get /me
- Baloo.get 'me', :query => {:access_token => '...'}
- => {...} # a facebook user hash
+  #get /me
+  Baloo.get 'me', :query => {:access_token => '...'}
+  # => {...} # a facebook user hash
 
- # post 
- Baloo.post 'me/albums', :body => {:access_token => '...', :name => 'Baloo Album'}
- => {"id": "..."}
+  # post 
+  Baloo.post 'me/albums', :body => {:access_token => '...', :name => 'Baloo Album'}
+  # => {"id": "..."}
 
- # app access token / client credentials
- # Baloo#app_token is an alias for Baloo#client_credentials
- Baloo.app_token
- => "your_app_token"
+  # app access token / client credentials
+  # Baloo#app_token is an alias for Baloo#client_credentials
+  Baloo.app_token
+  # => "your_app_token"
 
- Baloo.client_credentials
- => "same_thing"
+  Baloo.client_credentials
+  # => "same_thing"
 
- Baloo.app_token(app_id, app_secret)
- => "app token for some other app"
+  Baloo.app_token(app_id, app_secret)
+  # => "app token for some other app"
+
+  # Batch Requests
+  batch = Baloo::BatchRequest.new
+  25.times { batch.add :get, 'betapond' }
+  batch.perform {|res| puts res['body']['id'] }
+  # => 158724218692 (25 times)
 ```
 
 ## Contributing
